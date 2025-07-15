@@ -25,7 +25,7 @@ const nextQuestionForm = document.getElementById('nextQuestionForm');
 });*/
 
 // Remove csvInput event listener and replace with fetch at page load or when ready
-fetch('aranic_vocab_list.csv')
+fetch('arabic_vocab_list.csv')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok ' + response.statusText);
