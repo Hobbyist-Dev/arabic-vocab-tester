@@ -9,7 +9,7 @@ const quNum = document.getElementById('quNum');
 const feedback = document.getElementById('feedback');
 const nextQuestionForm = document.getElementById('nextQuestionForm');
 
-csvInput.addEventListener('change', (e) => {
+/*csvInput.addEventListener('change', (e) => {
   const file = csvInput.files?.[0];
   if (!file) return;
 
@@ -22,7 +22,26 @@ csvInput.addEventListener('change', (e) => {
   };
 
   reader.readAsText(file);
-});
+});*/
+
+// Remove csvInput event listener and replace with fetch at page load or when ready
+fetch('aranic_vocab_list.csv')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    return response.text();
+  })
+  .then(csvText => {
+    const rawLines = csvText.replace(/\r/g, '').split('\n').filter(line => line.trim() !== '');
+    lines = rawLines.map(line => line.split(','));
+    firstLine = lines[0].join(' , ');
+    // You can trigger initialization or enable UI here if needed
+  })
+  .catch(error => {
+    console.error('Failed to load CSV file:', error);
+  });
+
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
