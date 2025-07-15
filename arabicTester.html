@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        
+        <script src="arabicTester.js" defer></script>
+
+        <title>Arabic Test</title>
+    </head>
+
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/020/639/376/non_2x/arabic-pattern-background-and-islamic-ornament-vector.jpg');
+            background-repeat: repeat; /* This makes the image tile */
+            background-size: 500px;     /* Keeps original size of image */
+        }
+
+        .content{
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 12px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            max-width: 2000px;
+        }
+
+        #arabic{
+            font-family: Amiri;
+        }
+
+        .btn.btn-outline-primary{
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+    </style>
+
+
+
+
+
+    <body>
+ 
+        <h1 class="display-2 content">Arabic vocabulary tester</h1>
+        <input class="content" type="file" id="csvFile" accept=".csv"/><p class="content"><i>Note: if choosing file option shows and you're using this online, the website may be malfunctional or under development.</i></p>       
+
+
+        <form class="content options" id="info">
+            <p>Choose the lesson to test vocabulary up to:</p>
+            <select class="form-select" name="lesson" id="lesson">
+                <option value="">--Choose Lesson--</option>
+                <option value="Lesson 1">Lesson 1</option>
+                <option value="Lesson 2">Lesson 2</option>
+                <option value="Lesson 3">Lesson 3</option>
+                <option value="Lesson 4">Lesson 4</option>
+                <option value="Lesson 5">Lesson 5</option>
+                <option value="Lesson 6">Lesson 6</option>
+            </select><br><br><br>
+            <p>Input how many questions you want to attempt (max. 100)</p>
+            <input class="form-control" type="number" id="questions" name="questions" min="1" max="100" step="1" value="1" />
+            <br><br><button class="btn btn-primary" type="submit">BEGIN</button>
+        </form>
+
+
+        <div class="quiz content" style="display: none;">
+            <h2 id="quNum">Question _:</h2><br><br>
+            <p id="arabic" class="display-3" lang="ar">Working...</p>
+            <form id="answerForm">
+                <input class="form-control" placeholder="Enter translation" id="answer" name="answer"><br><br>
+                <button class="btn btn-outline-primary" type="submit">Check</button>
+            </form><br>
+
+            <form id="nextQuestionForm">
+                <button class="btn btn-secondary" id="next" style="display: none">Next Question</button><br>
+            </form>
+            <p class="display-6" id="feedback" style="display: none">No feedback yet.</p><br>
+        </div>
+        
+    </body>
+</html>
