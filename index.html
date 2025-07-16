@@ -20,7 +20,7 @@
         body{
             margin: 0;
             padding: 0;
-            background-image: url('https://cdn.pixabay.com/photo/2016/11/22/09/30/background-1848811_1280.jpg');
+            background-image: url('https://static.vecteezy.com/system/resources/previews/020/639/376/non_2x/arabic-pattern-background-and-islamic-ornament-vector.jpg');
             background-repeat: repeat; /* This makes the image tile */
             background-size: 500px;     /* Keeps original size of image */
         }
@@ -38,6 +38,7 @@
 
         #arabic{
             font-family: Amiri;
+            text-align: center;
         }
 
         .btn.btn-outline-primary{
@@ -53,7 +54,7 @@
     <body>
  
         <h1 class="display-2 content">Arabic vocabulary tester</h1>
-        <!--<input class="content" type="file" id="csvFile" accept=".csv"/><p class="content"><i>Note: if choosing file option shows and you're using this online, the website may be malfunctional or under development.</i></p>-->       
+        <input class="content" type="file" id="csvFile" accept=".csv"/><p class="content"><i>Note: if choosing file option shows and you're using this online, the website may be malfunctional or under development.</i></p>       
 
 
         <form class="content options" id="info">
@@ -75,7 +76,7 @@
 
         <div class="quiz content" style="display: none;">
             <h2 id="quNum">Question _:</h2><br><br>
-            <p id="arabic" class="display-3" lang="ar">Working...</p>
+            <p id="arabic" class="display-1" lang="ar">Working...</p>
             <form id="answerForm">
                 <input class="form-control" placeholder="Enter translation" id="answer" name="answer"><br><br>
                 <button class="btn btn-outline-primary" type="submit">Check</button>
