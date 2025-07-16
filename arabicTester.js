@@ -91,7 +91,9 @@ form.addEventListener('submit', (e) => {
       return;
     }
 
-    const [lesson, english, arabic] = availableLines[i];
+    const [lesson, ...rest] = availableLines[i];
+    const arabic = rest.pop();
+    const english = rest.join(', ');
 
     quNum.innerHTML = "Question " + (i + 1);
     arText.innerHTML = arabic;
@@ -107,10 +109,23 @@ form.addEventListener('submit', (e) => {
       feedback.style.display = 'block';
       nextQuestionForm.style.display = 'block';
 
-      if (enteredAns.trim().toLowerCase() === english.trim().toLowerCase()) {
-        
+      function normalize(str) {
+        return str
+          .toLowerCase()
+          .replace(/[^\p{L}\p{N}\s]/gu, '')  // remove punctuation using Unicode-aware regex
+          .trim();
+      }
+      
+      const entered = normalize(enteredAns);
+      const acceptedAnswers = english
+        .split(',')
+        .map(ans => normalize(ans));
+
+      if (acceptedAnswers.includes(entered)) { 
+        feedback.style.color = 'rgb(0, 145, 0)'
         feedback.innerHTML = 'You got it right!';
       } else {
+        feedback.style.color = 'rgb(145,0,0)'
         feedback.innerHTML = 'Incorrect! it is: <br><strong>' + english +'</strong>';
       }
       
