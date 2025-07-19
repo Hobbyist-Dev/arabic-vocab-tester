@@ -3,11 +3,14 @@ let lines = [];
 
 const csvInput = document.getElementById('csvFile');
 const form = document.getElementById('info');
-const arText = document.getElementById('arabic');
+const translateText = document.getElementById('translateText');
 const enteredAnsForm = document.getElementById('answerForm');
 const quNum = document.getElementById('quNum');
 const feedback = document.getElementById('feedback');
 const nextQuestionForm = document.getElementById('nextQuestionForm');
+const langDirectionButton = document.getElementById('langDirection');
+const langText = document.getElementById('langText');
+let isArabicToEnglish = true;
 
 /*csvInput.addEventListener('change', (e) => {
   const file = csvInput.files?.[0];
@@ -43,25 +46,37 @@ fetch('arabic_vocab_list.csv')
   });
 
 
+langDirectionButton.addEventListener('click', changeLangDirection);
+
+function changeLangDirection() {
+  isArabicToEnglish = !isArabicToEnglish;
+
+  if (langText.innerHTML.includes("English to Arabic")) {
+    langText.innerHTML = "Arabic to English&nbsp;&nbsp;";
+    translateText.lang = "ar";
+  } else {
+    langText.innerHTML = "English to Arabic&nbsp;&nbsp;";
+    translateText.lang = "en";
+  }
+}
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const formData = new FormData(form);
-  const selectedLesson = formData.get('lesson'); // e.g. "Lesson 2"
-  const selectedLessonNum = parseInt(selectedLesson.split(' ')[1]); // e.g. 2
+  const selectedLesson = formData.get('lesson');
+  const selectedLessonNum = parseInt(selectedLesson.split(' ')[1]);
   const questionTotal = parseInt(formData.get('questions'), 10);
 
   form.style.display = 'none';
-  document.getElementsByClassName('quiz')[0].style.display = 'block';
+  document.querySelector('.quiz').style.display = 'block';
 
-  // ✅ Filter lines up to and including selected lesson
   const availableLines = lines.filter((row, i) => {
-    if (i === 0) return false; // skip header
+    if (i === 0) return false;
     const lessonLabel = row[0];
     const rowLessonNum = parseInt(lessonLabel.split(' ')[1]);
     return rowLessonNum <= selectedLessonNum;
   });
 
-  // ✅ Shuffle available lines
   for (let i = availableLines.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [availableLines[i], availableLines[j]] = [availableLines[j], availableLines[i]];
@@ -72,19 +87,26 @@ form.addEventListener('submit', (e) => {
   function waitForSubmit(formX) {
     return new Promise(resolve => {
       const handler = (e) => {
-        e.preventDefault();          // Prevent form submission/reload
+        e.preventDefault();
         formX.removeEventListener('submit', handler);
-        resolve();                  // Resume the async function
+        resolve();
       };
       formX.addEventListener('submit', handler);
     });
   }
-  function askQuestion(i) {
 
+  function normalize(str) {
+    return str
+      .toLowerCase()
+      .replace(/[^\p{L}\p{N}\s]/gu, '')  // Remove punctuation
+      .trim();
+  }
+
+  function askQuestion(i) {
     enteredAnsForm.style.display = 'block';
     feedback.style.display = 'none';
     nextQuestionForm.style.display = 'none';
-    
+
     if (i >= questionTotal || i >= availableLines.length) {
       feedback.innerHTML = 'Quiz finished!';
       setTimeout(() => { location.reload(); }, 200);
@@ -96,44 +118,35 @@ form.addEventListener('submit', (e) => {
     const english = rest.join(', ');
 
     quNum.innerHTML = "Question " + (i + 1);
-    arText.innerHTML = arabic;
+    translateText.innerHTML = isArabicToEnglish ? arabic : english;
+    translateText.lang = isArabicToEnglish ? "ar" : "en";
 
     enteredAnsForm.reset();
 
     enteredAnsForm.onsubmit = async function (e) {
       e.preventDefault();
+
       const answerData = new FormData(enteredAnsForm);
-      const enteredAns = answerData.get('answer');
+      const entered = normalize(answerData.get('answer'));
 
       enteredAnsForm.style.display = 'none';
       feedback.style.display = 'block';
       nextQuestionForm.style.display = 'block';
 
-      function normalize(str) {
-        return str
-          .toLowerCase()
-          .replace(/[^\p{L}\p{N}\s]/gu, '')  // remove punctuation using Unicode-aware regex
-          .trim();
-      }
-      
-      const entered = normalize(enteredAns);
-      const acceptedAnswers = english
+      const acceptedAnswers = (isArabicToEnglish ? english : arabic)
         .split(',')
         .map(ans => normalize(ans));
 
-      if (acceptedAnswers.includes(entered)) { 
-        feedback.style.color = 'rgb(0, 145, 0)'
+      if (acceptedAnswers.includes(entered)) {
+        feedback.style.color = 'rgb(0, 145, 0)';
         feedback.innerHTML = 'You got it right!';
       } else {
-        feedback.style.color = 'rgb(145,0,0)'
-        feedback.innerHTML = 'Incorrect! it is: <br><strong>' + english +'</strong>';
+        feedback.style.color = 'rgb(145,0,0)';
+        feedback.innerHTML = `Incorrect! It is:<br><strong>${isArabicToEnglish ? english : arabic}</strong>`;
       }
-      
-      await waitForSubmit(document.getElementById('nextQuestionForm'));
-      askQuestion(i + 1);
-      
 
-      
+      await waitForSubmit(nextQuestionForm);
+      askQuestion(i + 1);
     };
   }
 
