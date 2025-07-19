@@ -20,7 +20,7 @@
         body{
             margin: 0;
             padding: 0;
-            background-image: url('https://cdn.pixabay.com/photo/2016/11/22/09/30/background-1848811_1280.jpg');
+            background-image:url('https://cdn.pixabay.com/photo/2016/11/22/09/30/background-1848811_1280.jpg');
             background-repeat: repeat; /* This makes the image tile */
             background-size: 500px;     /* Keeps original size of image */
         }
@@ -36,7 +36,7 @@
             max-width: 2000px;
         }
 
-        #arabic{
+        #translateText{
             font-family: Amiri;
             text-align: center;
         }
@@ -67,7 +67,12 @@
                 <option value="Lesson 4">Lesson 4</option>
                 <option value="Lesson 5">Lesson 5</option>
                 <option value="Lesson 6">Lesson 6</option>
-            </select><br><br><br>
+            </select><br><br>
+            <p id="langText" style="display: inline-block;">Arabic to English&nbsp;&nbsp;</p>
+            <button type="button" id="langDirection" class="btn btn-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M280-160 80-360l200-200 56 57-103 103h287v80H233l103 103-56 57Zm400-240-56-57 103-103H440v-80h287L624-743l56-57 200 200-200 200Z"/>
+                    </svg>
+                </button><br><br>
             <p>Input how many questions you want to attempt (max. 100)</p>
             <input class="form-control" type="number" id="questions" name="questions" min="1" max="100" step="1" value="1" />
             <br><br><button class="btn btn-primary" type="submit">BEGIN</button>
@@ -76,7 +81,7 @@
 
         <div class="quiz content" style="display: none;">
             <h2 id="quNum">Question _:</h2><br><br>
-            <p id="arabic" class="display-1" lang="ar">Working...</p>
+            <p id="translateText" class="display-1" lang="ar">Working...</p>
             <form id="answerForm">
                 <input class="form-control" placeholder="Enter translation" id="answer" name="answer"><br><br>
                 <button class="btn btn-outline-primary" type="submit">Check</button>
