@@ -14,7 +14,7 @@ Lesson 1,Rooster,دِيْكٌ
 Lesson 1,Teacher,مُدَرِّسٌ
 Lesson 1,Tissue,Handkerchief,مِنْدِيلٌ
 Lesson 1,Star,نَجْمٌ
-Lesson 1,This is,Thisهَذَا
+Lesson 1,This is,This,هَذَا
 Lesson 1,House,بَيْتٌ
 Lesson 1,Mosque,مَسْجِدٌ
 Lesson 1,Door,بَابٌ
@@ -102,7 +102,7 @@ Lesson 3,Meat,لَحْمٌ
 Lesson 4,In,فِيْ
 Lesson 4,On,عَلَى
 Lesson 4,Where?,أَيْنَ؟
-Lesson 4,Muhammad,Mohammad,Mohamedمُحَمَّدٌ
+Lesson 4,Muhammad,Mohammad,Mohamed,مُحَمَّدٌ
 Lesson 4,He,هُوَ
 Lesson 4,Room,غُرْفَةٌ
 Lesson 4,Bathroom,حَمَّامٌ
@@ -161,3 +161,78 @@ Lesson 6,Sister,أُخْتٌ
 Lesson 6,Also,أَيْضًا
 Lesson 6,Whose?,لِمَنْ؟
 Lesson 6,Iron,مِكْوَاةٌ
+Lesson 7,That is (f),تِلْكَ
+Lesson 7,Nurse,مُمَرِّضَةٌ
+Lesson 7,Tall (f),طَوِيلَةٌ
+Lesson 7,Chicken,دَجَّاجَةٌ
+Lesson 7,She‑camel,نَاقَةٌ
+Lesson 7,Garden,حَدِيقَةٌ
+Lesson 7,Short (f),قَصِيرَةٌ
+Lesson 7,Duck,بَطَّةٌ
+Lesson 7,Egg,بَيْضَةٌ
+Lesson 7,Caller to prayer,Muezzin,مُؤَذِّنٌ
+Lesson 7,Teacher (f),مُدَرِّسَةٌ
+Lesson 8,Behind,خَلْفَ
+Lesson 8,In front of,أَمَامَ
+Lesson 8,America,أَمْرِيكَا
+Lesson 8,Knife,سِكِّينٌ
+Lesson 8,England,إِنْكِلْتَرَا
+Lesson 8,Hospital,مُسْتَشْفَى
+Lesson 8,Switzerland,سُويسْرَا
+Lesson 8,Germany,أَلْمَانِيَا
+Lesson 8,France,فَرَنْسَا
+Lesson 8,Now,Just now,الْآنَ
+Lesson 8,Board,Whiteboard,Blackboard,سَبُّورَةٌ
+Lesson 8,Niche,مِحْرَابٌ
+Lesson 9,Famous,شَهِيرٌ
+Lesson 9,Difficult,صَعْبٌ
+Lesson 9,English (language),الإِنْجِلِيزِيَّةُ
+Lesson 9,Student,طَالِبَةٌ
+Lesson 9,Cup,كُوبٌ
+Lesson 9,Why?,لِمَاذَا؟
+Lesson 9,Today,الْيَوْمَ
+Lesson 9,With (restrictions),عِنْدَ
+Lesson 9,Library,مَكْتَبَةٌ
+Lesson 9,Who (m.s.),which (m.s.),الَّذِي
+Lesson 9,Small (f),صَغِيرَةٌ
+Lesson 9,Clinic,Small hospital,فَصْوْتٌ
+Lesson 9,Fan,مِرْوَحَةٌ
+Lesson 9,New (f),جَدِيدَةٌ
+Lesson 9,Big (f),كَبِيرَةٌ
+Lesson 9,Indonesia,إِنْدُونِيسيا
+Lesson 9,Secondary (school),ثَانَوِيَّةٌ
+Lesson 9,Fruit,فَاكِهَةٌ
+Lesson 9,Delicious,لَذِيذٌ
+Lesson 9,Sparrow,عُصْفُورٌ
+Lesson 9,Bird,طَائِرٌ
+Lesson 9,Arabic (language),الْعَرَبِيَّةُ
+Lesson 9,Easy,سَهْلٌ
+Lesson 9,Hardworking,مُجْتَهِدٌ
+Lesson 9,Lazy,كَسْلَانٌ
+Lesson 9,Cairo,القَاهِرَةُ
+Lesson 9,City,مَدِينَةٌ
+Lesson 9,Hungry,جَوْعَانٌ
+Lesson 9,Thirsty,عَطْشَانٌ
+Lesson 9,Angry,غَضْبَانٌ
+Lesson 10,Name,اِسْمٌ
+Lesson 10,What is your language?,مَا لُغَتُكَ؟
+Lesson 10,My name is,اِسْمِي
+Lesson 10,What is his name?,مَا اِسْمُهُ؟
+Lesson 10,Urdu,الأُرْدِيَّةُ
+Lesson 10,With (no restrictions),مَعَ
+Lesson 10,Colleague,Classmate,زَمِيلٌ
+Lesson 10,Japanese (language),اليَابَانِيَّةُ
+Lesson 10,One,وَاحِدٌ
+Lesson 10,Kuwait,الكَوَيْتُ
+Lesson 10,Your mother,أُمُّكَ
+Lesson 10,I went,ذَهَبْتُ
+Lesson 10,His father,أَبُوهُ
+Lesson 10,Do you have?,هَلْ عِنْدَكَ؟
+Lesson 10,Husband,زَوْجٌ
+Lesson 10,Your brother,أَخُوكَ
+Lesson 10,I have,عِنْدِي
+Lesson 10,Boy,وَلَدٌ
+Lesson 10,It has, He has,عِنْدَهُ
+Lesson 10,She has,عِنْدَهَا
+Lesson 10,Riyadh,الرِّيَاضُ
+Lesson 10,A sister,أُخْتٌ
