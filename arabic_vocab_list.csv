@@ -14,7 +14,7 @@ Lesson 1,Rooster,دِيْكٌ
 Lesson 1,Teacher,مُدَرِّسٌ
 Lesson 1,Tissue,Handkerchief,مِنْدِيلٌ
 Lesson 1,Star,نَجْمٌ
-Lesson 1,This is,هَذَا
+Lesson 1,This is,Thisهَذَا
 Lesson 1,House,بَيْتٌ
 Lesson 1,Mosque,مَسْجِدٌ
 Lesson 1,Door,بَابٌ
@@ -32,7 +32,7 @@ Lesson 1,Who?,مَنْ؟
 Lesson 2,What?,مَاذَا؟
 Lesson 2,Stone,حَجَرٌ
 Lesson 2,Milk,لَبَنٌ
-Lesson 2,That,ذَلِكَ
+Lesson 2,That is,That,ذَلِكَ
 Lesson 2,Imam,Leader,إِمَامٌ
 Lesson 2,Sugar,سُكّرٌ
 Lesson 2,What is that?,مَاذَا ذَلِكَ؟
@@ -76,15 +76,15 @@ Lesson 3,Face,وَجْهٌ
 Lesson 3,Friend,صَدِيْقٌ
 Lesson 3,Quran,Qur'an,قُرْآنٌ
 Lesson 3,Prayer,صَلاَةٌ
-Lesson 3,Kabah,Ka'abah,كَعْبَةٌ
+Lesson 3,Kabah,Ka'abah,Ka'bah,Kaabah,كَعْبَةٌ
 Lesson 3,Head,رَأْسٌ
 Lesson 3,Finger,صَبْعٌ
 Lesson 3,Soap,صَابُونٌ
 Lesson 3,Nail,ظُفْرٌ
-Lesson 3,Dawn,فَجْرٌ
+Lesson 3,Dawn,Fajr,فَجْرٌ
 Lesson 3,Midday,Dhuhr,Zuhr,ظُهْرٌ
-Lesson 3,Afternoon,Asr,عَصْرٌ
-Lesson 3,Sunset,Maghrib,مَغْرِبٌ
+Lesson 3,Afternoon,Asr,'Asr,عَصْرٌ
+Lesson 3,Sunset,West,Maghrib,مَغْرِبٌ
 Lesson 3,Evening,Isha,Isha'a,عِشَاءٌ
 Lesson 3,Garden,Paradise,جَنَّةٌ
 Lesson 3,Mouth,فَمٌّ
@@ -102,20 +102,20 @@ Lesson 3,Meat,لَحْمٌ
 Lesson 4,In,فِيْ
 Lesson 4,On,عَلَى
 Lesson 4,Where?,أَيْنَ؟
-Lesson 4,Muhammad,مُحَمَّدٌ
+Lesson 4,Muhammad,Mohammad,Mohamedمُحَمَّدٌ
 Lesson 4,He,هُوَ
 Lesson 4,Room,غُرْفَةٌ
 Lesson 4,Bathroom,حَمَّامٌ
 Lesson 4,Kitchen,مَطْبَخٌ
 Lesson 4,She,هِيَ
-Lesson 4,Watch,timepiece,سَاعَةٌ
+Lesson 4,Watch,Timepiece,سَاعَةٌ
 Lesson 4,School,مَدْرَسَةٌ
 Lesson 4,University,جَامِعَةٌ
 Lesson 4,Classroom,فَصْلٌ
 Lesson 4,I,أَنَا
 Lesson 4,Japan,اليَابَانُ
 Lesson 4,China,الصِّينُ
-Lesson 4,Toilet,حَمَّامٌ
+Lesson 4,Toilet,Bathroom,حَمَّامٌ
 Lesson 4,Sky,سَمَاءٌ
 Lesson 4,From,مِنْ
 Lesson 4,To,إِلَى
@@ -125,20 +125,19 @@ Lesson 4,He went,ذَهَبَ
 Lesson 4,Headmaster,Principle,مُدِيرٌ
 Lesson 4,India,الهِنْدُ
 Lesson 4,Market,سُوقٌ
-Lesson 4,Philippines,الفِلِّپِينُ
-Lesson 5,Masood,مَسْعُودٌ
+Lesson 4,Philippines,الفِلِّبِينُ
 Lesson 5,Minister,وَزِيرٌ
-Lesson 5,Professor,أُسْتَاذٌ
+Lesson 5,Professor,Teacher,أُسْتَاذٌ
 Lesson 5,Car,سَيَّارَةٌ
 Lesson 5,Son,ابْنٌ
-Lesson 5,Allah,اللَّهُ
+Lesson 5,Allah,Allâh,اللَّهُ
 Lesson 5,Name,اسْمٌ
 Lesson 5,Iraq,العِرَاقُ
 Lesson 5,Illuminated,مُنَوَّرَةٌ
 Lesson 5,Here,هُنَا
 Lesson 5,Bag,حَقِيبَةٌ
-Lesson 5,Under/Beneath,تَحْتَ
-Lesson 5,Girl/Daughter,بِنْتٌ
+Lesson 5,Under,Beneath,تَحْتَ
+Lesson 5,Girl,Daughter,بِنْتٌ
 Lesson 5,Paternal uncle,عَمٌّ
 Lesson 5,Closed,مَغْلُقٌ
 Lesson 5,Maternal uncle,خَالٌ
@@ -155,9 +154,8 @@ Lesson 6,Mother,أُمٌّ
 Lesson 6,Farmer,فَلَّاحٌ
 Lesson 6,Foot,Leg,رِجْلٌ
 Lesson 6,Cow,بَقَرَةٌ
-Lesson 6,Cooking pot,قِدْرٌ
+Lesson 6,Cooking pot,Pot,قِدْرٌ
 Lesson 6,East,مَشْرِقٌ
-Lesson 6,West,مَغْرِبٌ
 Lesson 6,This is,هٰذِهِ
 Lesson 6,Sister,أُخْتٌ
 Lesson 6,Also,أَيْضًا
