@@ -1,97 +1,127 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arabic Test</title>
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="arabicTester.js" defer></script>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-        
-        <script src="arabicTester.js" defer></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
 
-        <title>Arabic Test</title>
-    </head>
+    body {
+      display: flex;
+      flex-direction: column;
+      background-image: url('https://cdn.pixabay.com/photo/2016/11/22/09/30/background-1848811_1280.jpg');
+      background-repeat: repeat;
+      background-size: 500px;
+      font-family: sans-serif;
+    }
 
+    .body-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-            background-image:url('https://cdn.pixabay.com/photo/2016/11/22/09/30/background-1848811_1280.jpg');
-            background-repeat: repeat; /* This makes the image tile */
-            background-size: 500px;     /* Keeps original size of image */
-        }
+    main {
+      flex: 1;
+    }
 
-        .content{
-            margin-left: 20px;
-            margin-right: 20px;
-            margin-top: 20px;
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 12px;
-            padding-top: 30px;
-            padding-bottom: 30px;
-            max-width: 2000px;
-        }
+    .content {
+      margin: 20px;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 30px 12px;
+      max-width: 2000px;
+    }
 
-        #translateText{
-            font-family: Amiri;
-            text-align: center;
-        }
+    #translateText {
+      font-family: 'Amiri', serif;
+      text-align: center;
+    }
 
-        .btn.btn-outline-primary{
-            padding-left: 50px;
-            padding-right: 50px;
-        }
-    </style>
+    .btn.btn-outline-primary {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
 
+    .footer {
+      background-color: rgb(255, 255, 255);
+      font-size: x-small;
+      line-height: normal;
+      margin: 0%;
+      padding: 25px 10px;
+    }
+  </style>
+</head>
 
+<body>
+  <div class="body-wrapper">
+    <main>
+      <h1 class="display-2 content">Arabic vocabulary tester</h1>
+      <!--<input class="content" type="file" id="csvFile" accept=".csv"/>
+      <p class="content">
+        <i>Note: if choosing file option shows and you're using this online, the website may be malfunctional or under development.</i>
+      </p>-->
 
+      <form class="content options" id="info">
+        <p>Choose the lesson to test vocabulary up to:</p>
+        <select class="form-select" name="lesson" id="lesson">
+          <option value="">--Choose Lesson--</option>
+          <option value="Lesson 1">Lesson 1</option>
+          <option value="Lesson 2">Lesson 2</option>
+          <option value="Lesson 3">Lesson 3</option>
+          <option value="Lesson 4">Lesson 4</option>
+          <option value="Lesson 5">Lesson 5</option>
+          <option value="Lesson 6">Lesson 6</option>
+          <option value="Lesson 7">Lesson 7</option>
+          <option value="Lesson 8">Lesson 8</option>
+          <option value="Lesson 9">Lesson 9</option>
+          <option value="Lesson 10">Lesson 10</option>
+        </select><br><br>
 
+        <p id="langText" style="display: inline-block;">Arabic to English&nbsp;&nbsp;</p>
+        <button type="button" id="langDirection" class="btn btn-light">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black">
+            <path d="M280-160 80-360l200-200 56 57-103 103h287v80H233l103 103-56 57Zm400-240-56-57 103-103H440v-80h287L624-743l56-57 200 200-200 200Z"/>
+          </svg>
+        </button><br><br>
 
-    <body>
- 
-        <h1 class="display-2 content">Arabic vocabulary tester</h1>
-        <!--<input class="content" type="file" id="csvFile" accept=".csv"/><p class="content"><i>Note: if choosing file option shows and you're using this online, the website may be malfunctional or under development.</i></p>-->       
+        <p>Input how many questions you want to attempt (max. 100)</p>
+        <input class="form-control" type="number" id="questions" name="questions" min="1" max="100" step="1" value="1" /><br><br>
+        <button class="btn btn-primary" type="submit">BEGIN</button>
+      </form>
 
+      <div class="quiz content" style="display: none;">
+        <h2 id="quNum">Question _:</h2><br><br>
+        <p id="translateText" class="display-1" lang="ar">Working...</p>
+        <form id="answerForm">
+          <input class="form-control" placeholder="Enter translation" id="answer" name="answer"><br><br>
+          <button class="btn btn-outline-primary" type="submit">Check</button>
+        </form><br>
 
-        <form class="content options" id="info">
-            <p>Choose the lesson to test vocabulary up to:</p>
-            <select class="form-select" name="lesson" id="lesson">
-                <option value="">--Choose Lesson--</option>
-                <option value="Lesson 1">Lesson 1</option>
-                <option value="Lesson 2">Lesson 2</option>
-                <option value="Lesson 3">Lesson 3</option>
-                <option value="Lesson 4">Lesson 4</option>
-                <option value="Lesson 5">Lesson 5</option>
-                <option value="Lesson 6">Lesson 6</option>
-            </select><br><br>
-            <p id="langText" style="display: inline-block;">Arabic to English&nbsp;&nbsp;</p>
-            <button type="button" id="langDirection" class="btn btn-light">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M280-160 80-360l200-200 56 57-103 103h287v80H233l103 103-56 57Zm400-240-56-57 103-103H440v-80h287L624-743l56-57 200 200-200 200Z"/>
-                    </svg>
-                </button><br><br>
-            <p>Input how many questions you want to attempt (max. 100)</p>
-            <input class="form-control" type="number" id="questions" name="questions" min="1" max="100" step="1" value="1" />
-            <br><br><button class="btn btn-primary" type="submit">BEGIN</button>
+        <form id="nextQuestionForm">
+          <button class="btn btn-secondary" id="next" style="display: block">Next Question</button><br>
         </form>
+        <p class="display-6" id="feedback" style="display: none">No feedback yet.</p><br>
+      </div>
+    </main>
 
-
-        <div class="quiz content" style="display: none;">
-            <h2 id="quNum">Question _:</h2><br><br>
-            <p id="translateText" class="display-1" lang="ar">Working...</p>
-            <form id="answerForm">
-                <input class="form-control" placeholder="Enter translation" id="answer" name="answer"><br><br>
-                <button class="btn btn-outline-primary" type="submit">Check</button>
-            </form><br>
-
-            <form id="nextQuestionForm">
-                <button class="btn btn-secondary" id="next" style="display: block">Next Question</button><br>
-            </form>
-            <p class="display-6" id="feedback" style="display: none">No feedback yet.</p><br>
-        </div>
-        
-    </body>
+    <footer class="footer content">
+      © 2025 Arabic Vocabulary Tester. All rights reserved.<br><br>
+      This website and its original content are created and maintained by the developers of Arabic Vocabulary Tester.<br>
+      The vocabulary and lessons provided are based on the Madinah Arabic series by Dr. V. Abdur Rahim. All rights to the original material & textbooks belong to the author and publishers.<br>
+      This tool is not affiliated with or endorsed by the original author or publishers.<br>
+      We encourage respectful use of this resource and recommend obtaining the official textbook for full study.
+    </footer>
+  </div>
+</body>
 </html>
